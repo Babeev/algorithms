@@ -26,13 +26,8 @@ class MyArray {
 	}
 	
 	set(index, value) {
-    console.log('set', index, value)
     this.checkIndex(index)
-    for (let i = this.length; i > index; i--) {
-      this.memory[i] = this.memory[i - 1]
-    }
     this.memory[index] = value
-    this.length++
 	}
 
 	add(value, index) {
@@ -89,3 +84,7 @@ function allocate(size) {
 
   return memory
 }
+
+const array = new MyArray();
+console.log(array.add(1, 1))
+array.set(2, 1);
